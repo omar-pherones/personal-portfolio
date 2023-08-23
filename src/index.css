@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: 'Cosi Azure';
+    src: url(./assets/fonts/CosiAzure-Bold.ttf);
+}
+
+:root {
+    --color-dark: #050505;
+    --color-light: #f7f7f7;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 10%;
+    background-color: rgba(247, 247, 247, 0.5);
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-light);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-dark);
+}
+
+::selection {
+    background-color: #22d3ee;
+    color: var(--color-dark);
+}
+
+*,
+*::before,
+*::after {
+    cursor: none;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
