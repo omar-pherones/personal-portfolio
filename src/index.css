@@ -143,3 +143,111 @@ body {
     bottom: -40%;
     right: -20%;
 }
+.section-title {
+    font-family: 'Cosi Azure', sans-serif;
+    font-size: 10rem;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.project-right {
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+}
+
+.skill-item {
+    position: relative;
+}
+
+.skill-item::before,
+.skill-item::after {
+    content: '';
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-light);
+}
+
+.skill-item::before {
+    width: 0%;
+    opacity: 0.2;
+    transition: 1.5s;
+}
+
+.skill-item.reveal::before {
+    width: 100%;
+}
+
+.skill-item::after {
+    background-color: #22d3ee;
+    width: 0%;
+    transition: 0.5s;
+}
+
+.skill-item:hover::after {
+    width: 100%;
+}
+
+.skill-number {
+    font-size: 5rem;
+}
+
+.skill-name {
+    font-size: 2rem;
+}
+
+.about-left {
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+}
+
+input,
+textarea,
+button {
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero::before,
+    .hero::after {
+        font-size: 8rem;
+    }
+
+    .section-title {
+        font-size: 8rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    html {
+        font-size: 50%;
+    }
+
+    .hero::before,
+    .hero::after {
+        font-size: 6rem;
+    }
+
+    .section-title {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 40%;
+    }
+
+    .hero::before,
+    .hero::after {
+        font-size: 5rem;
+    }
+
+    .section-title {
+        font-size: 5rem;
+    }
+}

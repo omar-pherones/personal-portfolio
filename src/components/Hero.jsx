@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { useHoverEffect } from '../hooks/useHoverEffect';
 const data = {
-    img1: 'https://res.cloudinary.com/dpkbthpcw/image/upload/v1674222467/Personal%20Portfolio/hero-1_jcy0jj.jpg',
-    img2: 'https://res.cloudinary.com/dpkbthpcw/image/upload/v1674222467/Personal%20Portfolio/hero-2_sk0wmq.jpg',
+    img1: 'https://res.cloudinary.com/dvuyhxzav/image/upload/v1693065678/react-portfolio-image/hero-image-2_2_vow2kc.jpg',
+    img2: 'https://res.cloudinary.com/dvuyhxzav/image/upload/v1693067121/react-portfolio-image/2023_08_24_21_26_EB2D18E6-06C8-425E-8C5E-384982119FDF_2_em1vi2.jpg',
 };
 const Hero = () => {
     const heroImageRef = useRef(null);
