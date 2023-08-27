@@ -8,7 +8,10 @@ const Hero = () => {
     const heroImageRef = useRef(null);
     useHoverEffect(heroImageRef, data.img1, data.img2);
     return (
-        <div className="hero container mx-auto mt-20 flex items-center justify-center overflow-hidden">
+        <div
+            className="hero container mx-auto mt-20 flex items-center justify-center overflow-hidden"
+            id="home"
+        >
             <div className="hero-image" ref={heroImageRef}></div>
             <div className="shutter shutter-left overflow-hidden">
                 <h1>ReactJS</h1>

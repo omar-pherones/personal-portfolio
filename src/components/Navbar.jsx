@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
-const Navbar = () => {
+const Navbar = ({ footerName }) => {
     const link1Ref = useRef(null);
     const link2Ref = useRef(null);
     const link3Ref = useRef(null);
@@ -11,11 +11,13 @@ const Navbar = () => {
     const link7Ref = useRef(null);
     return (
         <nav
-            className={`flex justify-between container mx-auto mt-20 uppercase`}
+            className={`flex justify-between container mx-auto ${
+                footerName ? 'mt-40' : 'mt-20'
+            } uppercase`}
         >
             <div className="logo">
                 <HashLink smooth to="#home" className="link" ref={link1Ref}>
-                    Md. Omar Faruk
+                    {footerName ? 'Go to top' : 'Md. Omar Faruk'}
                 </HashLink>
             </div>
             <ul className="links flex flex-col gap-3">
