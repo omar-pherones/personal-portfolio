@@ -35,11 +35,11 @@
     color: var(--color-dark);
 }
 
-/* *,
+*,
 *::before,
 *::after {
     cursor: none;
-} */
+}
 
 html,
 body {
@@ -57,6 +57,39 @@ body {
     font-size: 1.6rem;
     line-height: 1.6;
 }
+/* custom cursor styles */
+.inner--cursor {
+    position: fixed;
+    left: 10px;
+    z-index: 9000;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-light);
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: width 0.5s, height 0.5s;
+}
+.inner--cursor.grow {
+    width: 30px;
+    height: 30px;
+    transition: width 0.5s, height 0.5s;
+}
+.outer--cursor {
+    position: fixed;
+    left: 10px;
+    z-index: 9000;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--color-light);
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 0.1s;
+}
+
 .app {
     position: relative;
 }
