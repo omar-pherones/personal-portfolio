@@ -1,5 +1,9 @@
 import { useRef } from 'react';
 import { useHoverEffect } from '../hooks/useHoverEffect';
+import {
+    useProjectLeftRightReaveal,
+    useSectionTitleReveal,
+} from '../hooks/gsap';
 const data = {
     img1: 'https://res.cloudinary.com/dvuyhxzav/image/upload/v1693066011/react-portfolio-image/2023_07_03_15_02_IMG_0120_2_essx8v.jpg',
     img2: 'https://res.cloudinary.com/dvuyhxzav/image/upload/v1693066018/react-portfolio-image/2023_07_03_10_48_IMG_0116_2_xvo7lm.jpg',
@@ -8,8 +12,12 @@ const About = () => {
     const projectTitleRef = useRef(null);
     const aboutLeftRef = useRef(null);
     const aboutRightRef = useRef(null);
+    const aboutSides = [aboutLeftRef, aboutRightRef];
 
     useHoverEffect(aboutLeftRef, data.img1, data.img2);
+    useSectionTitleReveal(projectTitleRef);
+    useProjectLeftRightReaveal(aboutSides);
+
     return (
         <div className="about container mx-auto mt-40" id="about">
             <div className="overflow-hidden">

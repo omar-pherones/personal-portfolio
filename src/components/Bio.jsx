@@ -1,6 +1,8 @@
 import { useRef } from 'react';
+import { useBioReveal } from '../hooks/gsap';
 const Bio = () => {
     const bioRef = useRef(null);
+    useBioReveal(bioRef);
     return (
         <div className="bio mt-20 container mx-auto overflow-hidden">
             <p ref={bioRef}>

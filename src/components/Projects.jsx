@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import Project from './Project';
+import { useSectionTitleReveal } from '../hooks/gsap';
 
 const data = [
     {
@@ -107,6 +108,7 @@ const data = [
 
 const Projects = () => {
     const projectTitleRef = useRef(null);
+    useSectionTitleReveal(projectTitleRef);
     return (
         <div className="projects container mx-auto mt-40" id="projects">
             <div className="overflow-hidden">

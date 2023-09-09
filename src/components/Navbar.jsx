@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
-
+import { useLinkRaster } from '../hooks/gsap';
 const Navbar = ({ footerName }) => {
     const link1Ref = useRef(null);
     const link2Ref = useRef(null);
@@ -9,6 +9,17 @@ const Navbar = ({ footerName }) => {
     const link5Ref = useRef(null);
     const link6Ref = useRef(null);
     const link7Ref = useRef(null);
+    const links = [
+        link1Ref,
+        link2Ref,
+        link3Ref,
+        link4Ref,
+        link5Ref,
+        link6Ref,
+        link7Ref,
+    ];
+
+    useLinkRaster(links, 2);
     return (
         <nav
             className={`flex justify-between container mx-auto ${

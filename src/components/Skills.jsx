@@ -1,4 +1,9 @@
 import { useEffect, useRef } from 'react';
+import {
+    useSectionTitleReveal,
+    useSkillInfoReveal,
+    useSkillLineReveal,
+} from '../hooks/gsap';
 const data = [
     {
         id: 1,
@@ -59,7 +64,16 @@ const data = [
 ];
 const Skills = () => {
     const skillTitleRef = useRef(null);
+    const skillItemRef = useRef([]);
+    const skillItem2Ref = useRef([]);
+    const skillInfoRef = useRef([]);
+    const skillInfo2Ref = useRef([]);
 
+    useSectionTitleReveal(skillTitleRef);
+    useSkillLineReveal(skillItemRef.current);
+    useSkillLineReveal(skillItem2Ref.current);
+    useSkillInfoReveal(skillInfoRef.current);
+    useSkillInfoReveal(skillInfo2Ref.current);
     return (
         <div className="skills container mx-auto mt-40" id="skills">
             <div className="overflow-hidden">
@@ -74,6 +88,7 @@ const Skills = () => {
                         .map((skill, i) => (
                             <li
                                 key={skill.id}
+                                ref={(el) => (skillItem2Ref.current[i] = el)}
                                 className="skill-item overflow-hidden"
                             >
                                 <div className="flex gap-10 items-baseline">
@@ -82,7 +97,12 @@ const Skills = () => {
                                             .padStart(2, 0)
                                             .padEnd(3, '.')}
                                     </span>
-                                    <span className="skill-name">
+                                    <span
+                                        className="skill-name"
+                                        ref={(el) =>
+                                            (skillInfoRef.current[i] = el)
+                                        }
+                                    >
                                         {skill.skill}
                                     </span>
                                 </div>
@@ -95,6 +115,7 @@ const Skills = () => {
                         .map((skill, i) => (
                             <li
                                 key={skill.id}
+                                ref={(el) => (skillItemRef.current[i] = el)}
                                 className="skill-item overflow-hidden"
                             >
                                 <div className="flex gap-10 items-baseline">
@@ -103,7 +124,12 @@ const Skills = () => {
                                             .padStart(2, 0)
                                             .padEnd(3, '.')}
                                     </span>
-                                    <span className="skill-name">
+                                    <span
+                                        className="skill-name"
+                                        ref={(el) =>
+                                            (skillInfo2Ref.current[i] = el)
+                                        }
+                                    >
                                         {skill.skill}
                                     </span>
                                 </div>
